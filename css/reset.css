@@ -1,0 +1,128 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v4.0 | 20180602
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+.hFlip {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+/*
+.cnet-float .responsiveBlocks .item {
+  position: relative;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.cnet-float .responsiveBlocks .item figure {
+  position: relative;
+}
+.cnet-float .responsiveBlocks .item figure:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.cnet-float .responsiveBlocks .item h3 {
+  margin: 10px 0 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 20px;
+}
+.cnet-float .responsiveBlocks .item .author {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.cnet-float .responsiveBlocks .item.b2x1 figure:before {
+  background: rgba(0, 0, 0, 0.05) linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.75) 100%);
+}
+.cnet-float .responsiveBlocks .item.b2x1 .content {
+  width: 61%;
+  bottom: 30px;
+  position: absolute;
+  margin: 0 30px;
+  color: #fff;
+}
+.cnet-float .responsiveBlocks .item.b2x1 h3 {
+  font-size: 1.64706em;
+  line-height: 1.14286em;
+  margin: 5px 0;
+}
+.cnet-float .responsiveBlocks .item.b1x1 figure {
+  height: 255px;
+}
+.cnet-float .responsiveBlocks .item.b1x1 figure img {
+  height: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+.cnet-float .responsiveBlocks .item.b1x1 h3 {
+  max-height: 63px;
+  overflow: hidden;
+}
+.cnet-float .responsiveBlocks .item.b1x1 .author {
+  position: absolute;
+  bottom: 15px;
+}
+
+.cnet-float .blockLayout4 .item {
+  width: 25%;
+  height: 400px;
+  margin-bottom: 14.5px;
+  float: left;
+}
+.cnet-float .blockLayout4 .item.b2x1 {
+  width: 50%;
+}
+
+.cnet-float .row {
+  min-width: 995px;
+  max-width: 1316px;
+  padding-left: 2.12766%;
+  padding-right: 2.12766%;
+  margin: 20px auto;
+  font-family: sans-serif;
+  font-size: 17px;
+  line-height: 1.4;
+  width: 100%;
+}
+
+.cnet-float img {
+  width: 100%;
+  height: auto;
+  border: 0;
+}
+
+.cnet-float figure {
+  margin: 0;
+}
+*/

@@ -1,0 +1,254 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>💪CSS Grid</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>CSS Grid? Weird Flex, But OK... <span class="hFlip">💪</span></h1>
+				</section>
+
+				<section>
+					<section>
+							<h3>What we'll be talking about</h3>
+							<ul>
+								<li class="fragment">Layout types: Flexbox & CSS Grid</li>
+								<li class="fragment">When to use them</li>
+							</ul>
+						</section>
+					<section>
+						<h2>Common Layouts</h2>
+						<ul class="fragment">
+							<li>Floats</li>
+							<li>Flexbox</li>
+							<li>Tables</li>
+							<li>Grid</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Common Layouts</h2>
+						<ul>
+							<li class="fragment strike" data-fragment-index=1>Floats</li>
+							<li>Flexbox</li>
+						</ul>
+						<p class="fragment" data-fragment-index=2>In many cases where floats are used, flexbox can now be used.</p>
+						
+					</section>
+					<section>
+						<h2>Proper use of the float property:</h2>
+						<img src="assets/web-text-wrap.png"/>
+					</section>
+					<section>
+						<h2>Common Layouts</h2>
+						<ul>
+							<li class="fragment strike" data-fragment-index=1>Tables</li>
+							<li>Grid</li>
+						</ul>
+						<p class="fragment" data-fragment-index=3>In most cases where tables are used, CSS grid can now be used.</p>
+					</section>
+					<section>
+						<h2>Proper use of table layouts:</h2>
+						<img src="https://media2.giphy.com/media/M9ILZKbpQEG8dwi4S3/giphy.gif?cid=790b7611a374f357bc09bf05a1f67f88b05ca4fdbe243b9e&rid=giphy.gif"/>
+						<ul>
+							<li>Email templates</li>
+							<li>CAN be used for tabular data, but grid is still better</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Flexbox VS Grid</h2>
+						<ul>
+							<li>Flex: single rows or single columns</li>
+							<li>Grid: many rows and many columns</li>
+						</ul>
+						<img src="assets/flexgrid.jpg"/>
+					</section>
+					<section>
+						<h4>And yes, we can use it:</h4>
+						<img style="width:60%;" src="assets/cani-flex.png"/>
+						<img style="width:60%;" src="assets/cani-grid.png"/>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-iframe="https://codepen.io/MandeeD/full/zYxvLGV">
+					</section>
+
+					<section data-background="assets/float-annotated.png">
+					</section>
+
+					<section>
+						<img style="width:40%;" src="assets/block-segment.png"/>
+						<p>Let's make these 1x1 blocks a bit more flexible</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="assets/flex.gif">
+						<h2>Let's talk about Flex</h2>
+					</section>
+
+					<section data-background-iframe="https://codepen.io/MandeeD/full/VwYvVzP">
+					</section>
+
+					<section data-background="assets/flex-annotated.png">
+					</section>
+
+					<section>
+						<h2>Now let's put all these blocks into a grid system.</h2>
+					</section>
+				</section>
+
+				<section>
+					<section data-background="https://media1.giphy.com/media/xT5LMWlarfdFFa1ciY/giphy.gif?cid=790b7611fa5f056915c23c1cf1a0e86e1a8b769203095b7d&rid=giphy.gif">
+						<h2>Oops... I Grid It Again</h2>
+					</section>
+
+					<section data-background-iframe="https://codepen.io/MandeeD/full/BayovRe">
+					</section>
+
+					<section>
+						<h4>A breakdown of the grid template:</h4>
+						<img src="assets/grid-annotated.png"/>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							```scss
+							.blockLayout4 {
+								.item {
+								   width: 25%;
+								   height: 400px;
+								   margin-bottom: 14.5px;
+								   float: left;
+							 
+								   &.b2x1 {
+									  width: 50%;
+								   }
+							 
+								   &.b1x1 {
+									  h3 {
+										 max-height: 63px;
+										 overflow: hidden;
+									  }
+							 
+									  .author {
+										 position: absolute;
+										 bottom: 15px;
+									  }
+								   }
+								}
+							 }
+							```
+						</script>
+					</section>
+
+					<section data-markdown>
+						<script type="text/template">
+							```scss
+							.blockLayout4 {
+								display: grid;
+								grid-template-columns: repeat(4, 1fr);
+								grid-template-rows: repeat(2, 1fr);
+								grid-gap: 20px;
+								
+								.item {
+									display: flex;
+									flex-direction: column;
+								
+									&.b2x1 {
+										grid-column: 1 / 3;
+									}
+								
+									&.b1x1 {
+										h3 {
+											flex: 1;
+										}
+										
+										.content {
+											flex: 1;
+											display: flex;
+											flex-direction: column;
+											justify-content: space-between;
+										}
+									}
+								}
+								}
+							```
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Examples of Grid out in the wild CNET</h2>
+					</section>
+					<section>
+						<img src="assets/nav-grid.png"/>
+					</section>
+					<section>
+						<img style="width:84%;" src="assets/reviewcard.png"/>
+					</section>
+					<section>
+						<img style="width:50%;" src="assets/product-grid.png"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Bottom line:</h2>
+						<p>Flexbox and CSS Grid aren't meant to battle, but rather complement one another.</p>
+					</section>
+					<section>
+						<h2>Questions?</h2>
+						<h2>🤔</h2>
+					</section>
+					<section>
+						<h2>Recommended Resources:</h2>
+						<ul>
+							<li><a style="color:white;text-decoration:underline;" href="https://yoksel.github.io/flex-cheatsheet/">https://yoksel.github.io/flex-cheatsheet/</a></li>
+							<li><a style="color:white;text-decoration:underline;" href="http://grid.malven.co/">http://grid.malven.co/</a></li>
+							<li><a style="color:white;text-decoration:underline;" href="https://dev.to/devmount/8-games-to-learn-css-the-fun-way-4e0f">https://dev.to/devmount/8-games-to-learn-css-the-fun-way-4e0f</a></li>
+						</ul>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
