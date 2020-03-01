@@ -17,4 +17,4 @@ The core of reveal.js is very easy to install. You'll simply need to download a 
 
 MIT licensed
 
-Copyright (C) 2020 [Mandy Cox](mandydcox.com(https://mandydcox.com/)
+Copyright (C) 2020 [Mandy Cox](https://mandydcox.com/)
